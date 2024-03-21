@@ -6,6 +6,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.17",
+    "@mui/icons-material": "^5.15.14",
     "@mui/joy": "^5.0.0-beta.32",
     "@mui/material": "^5.15.14",
     "@testing-library/jest-dom": "^5.17.0",
@@ -28,8 +29,12 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5",
     "stream-browserify": "^3.0.0",
     "url": "^0.11.3",
     "web-vitals": "^2.1.4"
@@ -57,5 +62,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }

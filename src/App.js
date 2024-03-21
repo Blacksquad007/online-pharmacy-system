@@ -4,6 +4,7 @@ import { CssVarsProvider } from '@mui/joy/styles';
 import LoginFinal from './components/loginpage';
 import Signup from './components/signup'; // Import Signup component
 import Home from './components/Home';
+import Details from './details';
 
 export default function app() {
   return (
@@ -13,9 +14,11 @@ export default function app() {
           <Route exact path="/" element={<LoginFinal />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/details" element={<Details />} />
         </Routes>
       </CssVarsProvider>
     </Router>
+
     
   );
 }

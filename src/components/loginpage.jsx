@@ -9,7 +9,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import Sheet from '@mui/joy/Sheet';
 import CssBaseline from '@mui/joy/CssBaseline';
-import { useColorScheme } from '@mui/joy/styles';
+import { CssVarsProvider, useColorScheme } from '@mui/joy/styles'; // Import CssVarsProvider and useColorScheme from Material-UI
 
 function ModeToggle() {
   const { mode, setMode } = useColorScheme();
@@ -52,7 +52,7 @@ function Login() {
       if (res.data === 'exist') {
         history('/home', { state: { id: email } });
       } else if (res.data === 'notexist') {
-        alert('User have not signed up');
+        alert('User has not signed up');
       }
     } catch (e) {
       alert('Wrong details');
@@ -61,72 +61,75 @@ function Login() {
   }
 
   return (
-    <main>
-      <ModeToggle />
-      <CssBaseline />
-      <Sheet
-        sx={{
-          width: 450,
-          height: 360,
-          mx: 120,
-          my: 18,
-          py: 3,
-          px: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          borderRadius: 'sm',
-          boxShadow: 'lg',
-        }}
-        variant="outlined"
-      >
-        <form onSubmit={submit}>
-          <div>
-            <Typography level="h4" component="h1">
-              <b>Log In</b>
-            </Typography>
-            <Typography level="body-sm">Enter your credentials.</Typography>
-          </div>
-          <br />
-          <FormControl>
-            <FormLabel>Email</FormLabel>
-            <Input
-              name="email"
-              type="email"
-              placeholder="johndoe@email.com"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </FormControl>
-          <br />
-          <FormControl>
-            <FormLabel>Password</FormLabel>
-            <Input
-              name="password"
-              type="password"
-              placeholder="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-          </FormControl>
-          <center>
-            <Button type="submit" sx={{ mt: 1 }}>
-              Log In
-            </Button>
-          </center>
-        </form>
-        <Typography
-          endDecorator={<Link href="/signup">Sign up</Link>}
-          fontSize="sm"
-          sx={{ alignSelf: 'center' }}
+    <CssVarsProvider> {/* Wrap your component tree with CssVarsProvider */}
+      <main>
+        <ModeToggle />
+        <CssBaseline />
+        <img src={"https://cdni.iconscout.com/illustration/premium/thumb/online-pharmacy-app-6276491-5217078.png"} alt="Background" style={{ width: '60%', marginLeft: '-8%', marginBottom: '-49%'}} />
+        <Sheet
+          sx={{
+            width: 450,
+            height: 370,
+            mx: 120,
+            my: 20,
+            py: 3,
+            px: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            borderRadius: 'sm',
+            boxShadow: 'lg',
+          }}
+          variant="outlined"
         >
-          Don't have an account?
-        </Typography>
-      </Sheet>
-    </main>
+          <form onSubmit={submit}>
+            <div>
+              <Typography level="h4" component="h1">
+                <b>Log In</b>
+              </Typography>
+              <Typography level="body-sm">Enter your credentials.</Typography>
+            </div>
+            <br />
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <Input
+                name="email"
+                type="email"
+                placeholder="johndoe@email.com"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormControl>
+            <br />
+            <FormControl>
+              <FormLabel>Password</FormLabel>
+              <Input
+                name="password"
+                type="password"
+                placeholder="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+            </FormControl>
+            <center>
+              <Button type="submit" sx={{ mt: 1 }}>
+                Log In
+              </Button>
+            </center>
+          </form>
+          <Typography
+            endDecorator={<Link href="/signup">Sign up</Link>}
+            fontSize="sm"
+            sx={{ alignSelf: 'center' }}
+          >
+            Don't have an account?
+          </Typography>
+        </Sheet>
+      </main>
+    </CssVarsProvider> 
   );
 }
 

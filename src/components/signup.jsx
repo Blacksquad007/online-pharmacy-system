@@ -69,6 +69,7 @@ function Signup() {
     <main>
       <ModeToggle />
       <CssBaseline />
+      <img src={"https://cdni.iconscout.com/illustration/premium/thumb/online-pharmacy-app-6276491-5217078.png"} alt="Background" style={{ width: '60%', marginLeft: '-8%', marginBottom: '-49%'}} />
       <Sheet
         sx={{
           width: 450,

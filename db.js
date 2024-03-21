@@ -15,7 +15,7 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-const newSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -45,6 +45,49 @@ const newSchema = new mongoose.Schema({
 
 // Define a unique index on the email field for efficient validation
 // Define a model for the user schema
-const collection = mongoose.model("collection", newSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = collection
+const detailsSchema = new mongoose.Schema({
+  // email: {
+  //   type: String,
+  //   required: true,
+  //   unique: true, // Ensure email is unique
+  // },
+  name: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String, // Consider using a more specific type for phone numbers (e.g., Number)
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+  dob: {
+    type: Date,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  district: {
+    type: String,
+    required: true,
+  },
+  pincode: {
+    type: String, // Consider using a more specific type for pincodes (e.g., Number)
+    required: true,
+  },
+});
+
+// Define a model for the details schema
+const Details = mongoose.model("Details", detailsSchema);
+
+module.exports = { User, Details };
