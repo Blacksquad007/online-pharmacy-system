@@ -5,6 +5,7 @@ import LoginFinal from './components/loginpage';
 import Signup from './components/signup'; // Import Signup component
 import Home from './components/Home';
 import Details from './details';
+// import Component from './homepage';
 
 export default function app() {
   return (
